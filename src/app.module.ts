@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { Pessoa } from './pessoa/entities/pessoa.entity';
+import { CarroModule } from './carro/carro.module';
+import { CarroController } from './carro/carro.controller';
 
 
 @Module({
@@ -17,8 +19,9 @@ import { Pessoa } from './pessoa/entities/pessoa.entity';
       synchronize: true,
     }),
     PessoaModule,
+    CarroModule,
   ],
-  controllers: [],
+  controllers: [CarroController],
   providers: [],
 })
 export class AppModule {}
